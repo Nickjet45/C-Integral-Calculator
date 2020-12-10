@@ -182,6 +182,7 @@ int main(){
     cout << "The integral is: ";
     //Loop over the number of terms that the program calculated earlier
     for(int i = 0; i < numberOfTerms; i++){
+
         //If the current loop is less than the total number of terms - 1(which is the amount of signs found), than the program has not yet ended
         //Therefore it should find the integral of said equation and output it
         if(i < (numberOfTerms - 1)){
@@ -194,8 +195,8 @@ int main(){
             //Loop over the size of the last term, if the term has x in it than find the derivative as usual and add + C, and exit the program
             //Must exit the program, as the first for loop will run if it is simply broken
             //Else the array is something such as: 10, which's derivative is 10x, therefore append x + C to the integral
-            for(int i = 0; i < placeHolder.size(); i++){
-                if(placeHolder[i] == 'x'){
+            for(int k = 0; k < placeHolder.size(); k++){
+                if(placeHolder[k] == 'x'){
                     Terms[i].findIntegral();
                     cout << "+ C";
                     delete pEquation, Terms, SignsOfEquation;
