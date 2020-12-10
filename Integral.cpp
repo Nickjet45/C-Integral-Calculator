@@ -162,6 +162,8 @@ int main(){
             Terms[currentIndex].storeTerm(pEquation[i]);
         }
     }
+
+    //Outputs to a new line to allow the program to properly display information
     std::cout << endl;
 
     cout << "The integral is: ";
