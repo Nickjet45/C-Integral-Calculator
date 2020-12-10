@@ -12,6 +12,7 @@ class equationTerm{
         void storeExponent(string exponent);
         void findIntegral();
         void outputEquation();
+        string getEquation();
     
     private:
         string fullTerm = "", integral = "";
@@ -29,6 +30,12 @@ void equationTerm:: storeExponent(string foundExponent){
     exponent = std::stoi(foundExponent);
 }
 
+//Returns the equation as a string to allow the program to evulate it
+
+string equationTerm:: getEquation(){
+    return fullTerm;
+}
+
 //Outputs the equation of the current object being indexed
 
 void equationTerm:: outputEquation(){
@@ -39,16 +46,22 @@ void equationTerm:: outputEquation(){
 void equationTerm::findIntegral(){
     string exponentOfintegral = to_string(exponent + 1);
     for(int i = 0; i < fullTerm.size(); i++){
+        //If the current term being read in is an x, and the after it is not '^', which indicates that the term has an exponent
+        //Than the term is simply numX, and so the integral of it is x^2/2
+        //And this is the last term that the program needs to find, so break the loop
         if(fullTerm[i] == 'x'){
             if(fullTerm[i+1] != '^'){
                 integral+= "x^" + exponentOfintegral + "/" + exponentOfintegral;
                 break;
             }
         }
+        //If the current term being read in is '^', than the term after it must be old exponent + 1, and it should be divided by old exponent + 1
+        //To find it's integral
         if(fullTerm[i] == '^'){
             integral += ('^' + exponentOfintegral + "/" + exponentOfintegral);
             break;
         }
+        //And if the term being read in isn't ^, than it's a number that should be repeated character for character
         else{
             integral += fullTerm[i];
         }
@@ -167,17 +180,34 @@ int main(){
     std::cout << endl;
 
     cout << "The integral is: ";
+    //Loop over the number of terms that the program calculated earlier
     for(int i = 0; i < numberOfTerms; i++){
+        //If the current loop is less than the total number of terms - 1(which is the amount of signs found), than the program has not yet ended
+        //Therefore it should find the integral of said equation and output it
         if(i < (numberOfTerms - 1)){
             Terms[i].findIntegral();
             cout << " " << SignsOfEquation[i] << " ";
         }
         else{
+        //Else the program should find the last integral, output it, and than determine whether the program must output an x alongside the + C
+            string placeHolder = Terms[i].getEquation();
+            //Loop over the size of the last term, if the term has x in it than find the derivative as usual and add + C, and exit the program
+            //Must exit the program, as the first for loop will run if it is simply broken
+            //Else the array is something such as: 10, which's derivative is 10x, therefore append x + C to the integral
+            for(int i = 0; i < placeHolder.size(); i++){
+                if(placeHolder[i] == 'x'){
+                    Terms[i].findIntegral();
+                    cout << "+ C";
+                    delete pEquation, Terms, SignsOfEquation;
+                    exit(1);
+                }
+            }
             Terms[i].findIntegral();
             cout << "x + C";
         }
     }
 
+    //Deletes the pointers created to ensure that the memory is returned
     delete pEquation, Terms, SignsOfEquation;
 
 }
