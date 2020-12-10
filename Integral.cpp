@@ -116,7 +116,7 @@ int getNumTerms(char equation[], int sizeOfArray){
 int main(){
     string equatioOfintegral;
     int sizeOfArray, numberOfTerms, currentIndex = 0;
-    //Gets the integral from the user
+    //Gets the equation from the user
     equatioOfintegral = getEquation();
 
     //Sets the size of the array to be equal to the size of the string that was filled
