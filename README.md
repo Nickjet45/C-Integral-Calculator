@@ -1,3 +1,9 @@
 # C-Integral-Calculator
 
-Program that reads in an equation from the user, calculates the numbers of terms based off of the equation, and than outputs the integral of said equation
+Program: Intelgral Calculator
+  
+  Reason: C++ project
+  
+  Function: Finds the integral of an equation based off of user input.
+  
+  Status: Finished, might be updated in the future to find the integral of complex equations too
