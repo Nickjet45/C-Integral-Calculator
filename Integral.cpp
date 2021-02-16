@@ -28,16 +28,12 @@ void equationTerm::findIntegral(){
     std::string exponentOfintegral = std::to_string(exponent + 1);
     for(int i = 0; i < fullTerm.size(); i++){
         //If the current term being read in is a 1, check to see if it's 1/x and if so the integral is ln(x)
-        if(fullTerm[i] == '1'){
-            if(fullTerm[i+1] == '/'){
-                if(fullTerm[i+2] == 'x'){
-                    integral+="ln(x)";
-                    break;
-                }
-            }
+        if((fullTerm[i]) == '1' && (fullTerm[i+1] == '/') && (fullTerm[i+2] == 'x')){
+            integral+= "ln(x)";
+            break;
         }
 
-        //If the term being read in is e, than the derivative is 1/exponent * e^exonent
+        //If the term being read in is e, than the derivative is 1/exponent * e^exponent
         if(fullTerm[i] == 'e'){
             //Removes the additional 1 from the exponent
             exponentOfintegral = std::to_string(exponent);
