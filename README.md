@@ -6,4 +6,8 @@ Program: Intelgral Calculator
   
   Function: Finds the integral of an equation based off of user input.
   
-  Status: Finished, might be updated in the future to find the integral of complex equations too
+  Status: Finished. Possibly will come back to find the derivatives of more complex terms
+  
+  Program finds the integrals of 1/x, e^x, and any term * x.
+  
+  
