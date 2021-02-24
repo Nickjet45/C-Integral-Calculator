@@ -1,5 +1,5 @@
 #include "Integral.hpp"
-#include <iostreaM>
+#include <iostream>
 
 //Updates the stored value of term with the character being passed through
 void equationTerm::storeTerm(char currentChar){

@@ -1,5 +1,5 @@
-#ifndef INTEGRAL
-#define INTEGRAL
+#ifndef INTEGRAL_H
+#define INTEGRAL_H
 #include <string>
 //Declaration of class to store the term and the exponential value of said term
 
