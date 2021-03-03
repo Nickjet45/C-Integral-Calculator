@@ -131,7 +131,7 @@ int main(){
                 if(placeHolder[k] == 'x'){
                     Terms[i].findIntegral();
                     std::cout << " + C";
-                    delete pEquation, Terms, SignsOfEquation;
+                    delete[] pEquation, Terms, SignsOfEquation;
                     exit(1);
                 }
             }
@@ -141,6 +141,6 @@ int main(){
     }
 
     //Deletes the pointers created to ensure that the memory is returned
-    delete pEquation, Terms, SignsOfEquation;
+    delete[] pEquation, Terms, SignsOfEquation;
 
 }
