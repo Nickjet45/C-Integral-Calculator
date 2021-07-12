@@ -1,5 +1,6 @@
 main.exe : main.o Integral.o
 	g++ -Wall main.o Integral.o -o main.exe
+	./main.exe
 
 main.o : main.cpp Integral.hpp
 	g++ -Wall -c main.cpp

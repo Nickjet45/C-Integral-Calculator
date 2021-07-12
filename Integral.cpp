@@ -29,7 +29,7 @@ void equationTerm::findIntegral(){
     for(int i = 0; i < fullTerm.size(); i++){
         //If the current term being read in is a 1, check to see if it's 1/x and if so the integral is ln(x)
         if((fullTerm[i]) == '1' && (fullTerm[i+1] == '/') && (fullTerm[i+2] == 'x')){
-            integral+= "ln(x)";
+            integral+= "ln|x|";
             break;
         }
 
