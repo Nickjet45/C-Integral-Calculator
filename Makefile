@@ -8,6 +8,5 @@ main.o : main.cpp Integral.hpp
 Integral.o : Integral.hpp Integral.cpp
 	g++ -Wall -c Integral.cpp
 
-
 clean : 
 	rm *.o

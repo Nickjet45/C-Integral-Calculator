@@ -143,4 +143,6 @@ int main(){
     //Deletes the pointers created to ensure that the memory is returned
     delete[] pEquation, Terms, SignsOfEquation;
 
+    return 0;
+
 }
