@@ -136,7 +136,7 @@ int main(){
                 }
             }
             Terms[i].findIntegral();
-            std::cout << "x + C";
+            std::cout << "x + C \n";
         }
     }
 
