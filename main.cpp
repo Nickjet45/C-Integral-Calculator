@@ -1,5 +1,6 @@
 #include <vector>
-#include "Integral.cpp"
+#include <iostream>
+#include "Integral.hpp"
 
 //Function to accept the equation of the integral from the users
 std::string getEquation(){
