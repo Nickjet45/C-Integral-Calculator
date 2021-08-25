@@ -22,7 +22,6 @@ void convertArray(std::string oldEquation, char newEquation[]){
 //Outputs the equation entered by the user to ensure that the program read the message in properly
 
 void verifyEquation(char equation[], int sizeOfArray){
-    char userResponse;
     std::cout << "For your equation you entered: ";
     for(int i = 0; i < sizeOfArray; i++){
         std::cout << equation[i];
