@@ -130,9 +130,9 @@ int main(){
             for(int k = 0; k < placeHolder.size(); k++){
                 if(placeHolder[k] == 'x'){
                     Terms[i].findIntegral();
-                    std::cout << " + C";
+                    std::cout << " + C \n";
                     delete[] pEquation, Terms, SignsOfEquation;
-                    exit(1);
+                    return 0;
                 }
             }
             Terms[i].findIntegral();
