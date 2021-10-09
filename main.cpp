@@ -23,7 +23,6 @@ void convertArray(std::string oldEquation, char newEquation[]){
 //Outputs the equation entered by the user to ensure that the program read the message in properly
 
 void verifyEquation(char equation[], int sizeOfArray){
-    char userResponse;
     std::cout << "For your equation you entered: ";
     for(int i = 0; i < sizeOfArray; i++){
         std::cout << equation[i];
@@ -131,17 +130,19 @@ int main(){
             for(int k = 0; k < placeHolder.size(); k++){
                 if(placeHolder[k] == 'x'){
                     Terms[i].findIntegral();
-                    std::cout << " + C";
+                    std::cout << " + C \n";
                     delete[] pEquation, Terms, SignsOfEquation;
-                    exit(1);
+                    return 0;
                 }
             }
             Terms[i].findIntegral();
-            std::cout << "x + C";
+            std::cout << "x + C \n";
         }
     }
 
     //Deletes the pointers created to ensure that the memory is returned
     delete[] pEquation, Terms, SignsOfEquation;
+
+    return 0;
 
 }

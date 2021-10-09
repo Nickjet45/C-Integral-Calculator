@@ -354,4 +354,9 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+<<<<<<< HEAD
 *.exe
+=======
+# File ignores
+*.o
+>>>>>>> f61548d1a00778304eedd560190a1a36f39c9c9e

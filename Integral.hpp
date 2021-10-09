@@ -13,7 +13,7 @@ class equationTerm{
     
     private:
         std::string fullTerm = "", integral = "";
-        int exponent = 1;
+        int exponent;
 };
 
 
