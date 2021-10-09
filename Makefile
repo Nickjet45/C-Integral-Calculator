@@ -1,6 +1,9 @@
-main.exe : main.o Integral.o
-	g++ -Wall main.o Integral.o -o main.exe
-	./main.exe
+CXX = g++
+CXXFLAGS = -Wall
+
+main: main.o Integral.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+	./$@
 
 main.o : main.cpp Integral.hpp
 	g++ -Wall -c main.cpp
